@@ -1,0 +1,23 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': loveIt > dontLoveIt ,
+'list-group-item-danger': loveIt < dontLoveIt }">
+
+     <h4 [ngStyle]="{color: 'black'}">
+
+             <div> <label>Title :</label>   {{getTitle()}}   </div> 
+             <div> <label>Contenu : </label> {{getContent()}}</div>
+             <div> Date de creation : {{ getCreationDate() | date :'dd/mm/yyy' }} </div>
+             <button class="btn btn-default pull-right" (click)="onDeletePost(getPost())">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          
+     </h4>
+    
+
+     <button class="btn btn-sm btn-success"  (click)="onLoveIt()">Like it {{getLoveIt()}}</button>
+     <button class="btn btn-sm btn-danger"   (click)="onDontLoveIt()">Dislike  {{getDontLoveIt()}}</button>
+     <br>
+     <br>
+     <a  [routerLink]="[id]" >Détail</a>
+
+</li>
