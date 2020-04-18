@@ -27,6 +27,7 @@ export class PostListItemComponent implements OnInit {
     this.loveIt = this.loveIt == null? 0 :this.loveIt;
   }
 
+  //TODO
   getTitle() {
     return this.title;
   }
