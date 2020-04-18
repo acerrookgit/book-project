@@ -53,20 +53,18 @@ export class PostsService {
 
   addThumbUp(index: number) {
     this.posts[index].loveIt = this.posts[index].loveIt + 1;
-    console.log("addthumbdown" + this.posts[index].loveIt);
     this.emitPostSubject();
   }
   addThumbDown(index: number) {
-    console.log(index);
     this.posts[index].dontLoveIt = this.posts[index].dontLoveIt + 1;
-    console.log("addThumbUp" + this.posts[index].dontLoveIt);
     this.emitPostSubject();
   }
 
 
   createNewPost(newPost: post) {
     newPost.id = this.posts[(this.posts.length - 1)].id + 1;
-    console.log('ceratenewpost');
+    newPost.loveIt = 0;
+    newPost.dontLoveIt = 0;
     this.posts.push(newPost);
     this.saveBooks();
     this.emitPostSubject();
