@@ -28,6 +28,7 @@ export class PostListItemComponent implements OnInit {
   }
 
   //TODO
+  //TODO
   getTitle() {
     return this.title;
   }
